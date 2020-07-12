@@ -1,0 +1,21 @@
+<% include ../partials/header %>
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Sobre o Filme: <%= filme.name %></h2>
+            <form method="post"> 
+                <div class="form-group">
+                    Nome do Filme: <%= filme.name %><br> 
+                </div>
+                <textarea class="form-control" name="comentario"></textarea> 
+                <input type="submit" value="Adicionar comentário">
+                <% filme.comments.forEach(c => { %>
+                    <div class="card"><%= c %></div>
+                <% }) %> 
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+<% include ../partials/footer %>
